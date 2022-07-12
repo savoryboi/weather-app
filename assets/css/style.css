@@ -49,14 +49,14 @@ body {
 input {
     color: black;
     padding: 1% 2%;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 25px 0px 0px 25px;
     min-width: 25%;
 }
 
 #searchBtn {
     background-color: rgb(255, 0, 119);
     padding: 1% 2%;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 25px 25px 0px;
 }
 
 .place-wrapper {
