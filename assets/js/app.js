@@ -25,7 +25,7 @@ submitBtn.onclick = function () {
             console.log(lat, lon);
             $('#city-name').text(citySearch)
 
-            fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&appid=ce8c11c996c61edc1c5e6e600162d8a9')
+            fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&units=imperial&appid=ce8c11c996c61edc1c5e6e600162d8a9')
 
                 .then(function (res) {
                     return res.json();
@@ -33,7 +33,8 @@ submitBtn.onclick = function () {
                 .then(function (data) {
                     console.log(data);
 
-                    var i = 0;
+                var i = 0;
+
                     $('.forecast-main').each(function () {
                         
                         var weatherDataMain = data.daily[i].weather[0].description;
@@ -58,11 +59,52 @@ submitBtn.onclick = function () {
                         i++;
                     })
 
+                    i = 0;
+
+                    $('.temp').each(function() {
+                        var tempData = Math.floor(data.daily[i].temp.day);
+
+                        // convert Kelvin to farenheight
+                        $(this).text(`${tempData} °F`)
+                        i++;
+                    })
+
+                    i = 0;
+                    $('.humidity').each(function() {
+                        var humidityData = data.daily[i].humidity;
+                        $(this).text(`${humidityData}% humidity`);
+                        i++;
+                    })
+
+                    i = 0;
+                    $('.wind').each(function() {
+                        var wind = Math.floor(data.daily[i].wind_speed);
+
+                        $(this).text(`${wind}mph winds`)
+                        i++;
+                    })
+
+                    i = 0;
+                    $('.uv').each(function() {
+                        var uvi = data.daily[i].uvi;
+
+                        $(this).text(`UVI: ${uvi}`);
+
+                        if(uvi < 3){
+                            $(this).css('background-color', 'lightblue');
+                        } else if(uvi >= 3 && uvi < 6) {
+                            $(this).css('background-color', 'green');
+                        } else if(uvi >=6 && uvi < 10) {
+                            $(this).css('background-color', 'orange');
+                        } else if(uvi >=10) {
+                            $(this).css('background-color', 'red');
+                        }
+                        i++;
+                    })
+
 
 
                 })
-
-            // loop for five days
         })
 
 
