@@ -17,7 +17,6 @@ $('#day4-date').text(day4);
 $('#day5-date').text(day5);
 
 
-
 submitBtn.onclick = function () {
     // event.preventDefault();
 
@@ -118,5 +117,6 @@ submitBtn.onclick = function () {
                 })
         })
 
+        $('#main-section').removeClass('hidden');
 
 }
