@@ -13,6 +13,8 @@ submitBtn.onclick = function () {
     // get value from input box 
     citySearch = searchTxt.value;
 
+        // input value in api links to get correct info from openweather
+        
     fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + citySearch + '&limit=5&appid=ce8c11c996c61edc1c5e6e600162d8a9')
         .then(function (res) {
             return res.json();

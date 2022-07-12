@@ -1,0 +1,46 @@
+/* RESETS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: white;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    background-color: rgba(5, 5, 5, 0.972);
+}
+
+/* GLOBAL CLASSES */
+.d-flex {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.center {
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+
+/* CUSTOM STYLES */
+.forecast-wrapper div {
+    margin: 2% 0;
+    padding: 4px 10px;
+    border: 1px solid rgba(175, 173, 173, 0.702);
+    border-radius: 8px;
+    min-width: 18%;
+}
