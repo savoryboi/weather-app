@@ -72,3 +72,10 @@ input {
     min-width: 18%;
 }
 
+.historyBtn {
+    background-color: blue;
+    min-width: 50px;
+    border-radius: 5px;
+    padding: 3px 2%;
+}
+
