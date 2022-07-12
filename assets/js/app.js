@@ -135,6 +135,7 @@ $(document).ready(function () {
             return;
         }
 
+        historyArray.reverse();
         searchHistEl[0].innerHTML = '';
         console.log(searchHistEl)
 
@@ -144,8 +145,8 @@ $(document).ready(function () {
             button.setAttribute('class', 'historyBtn')
 
             button.textContent = historyArray[i];
-            button.addEventListener('click', function () {
-                getForecast(historyArray[i])
+            button.addEventListener('click', function(event) {
+                getForecast(event.target.textContent)
             })
             searchHistEl.append(button);
         }
