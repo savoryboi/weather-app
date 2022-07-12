@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    font-weight: lighter;
     color: white;
 }
 
@@ -37,6 +38,28 @@ body {
 
 
 /* CUSTOM STYLES */
+#title {
+    padding: 2% 0px 5% 0px; 
+}
+
+input {
+    color: black;
+    padding: 1% 2%;
+    border-radius: 10px 0px 0px 10px;
+    min-width: 25%;
+}
+
+#searchBtn {
+    background-color: rgb(255, 0, 119);
+    padding: 1% 2%;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.place-wrapper {
+    padding: 10px;
+    font-size: large;
+}
+
 .forecast-wrapper div {
     margin: 2% 0;
     padding: 4px 10px;
@@ -44,3 +67,4 @@ body {
     border-radius: 8px;
     min-width: 18%;
 }
+
