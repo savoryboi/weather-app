@@ -2,8 +2,19 @@
 var citySearch;
 var submitBtn = document.querySelector('#searchBtn');
 var searchTxt = document.querySelector('#searchTxt');
-var todayDate = $('#today-date').text(moment().format('MMMM Do, YYYY'))
+var today = moment().format('MMMM Do');
+var tomorrow = moment().add(1, 'days').format('MMMM Do');
+var day3 = moment().add(2, 'days').format('MMMM Do');
+var day4 = moment().add(3, 'days').format('MMMM Do');
+var day5 = moment().add(4, 'days').format('MMMM Do');
 
+
+// fill in dates on top of each box
+$('#today-date').text(today);
+$('#tomorrow-date').text(tomorrow);
+$('#day3-date').text(day3);
+$('#day4-date').text(day4);
+$('#day5-date').text(day5);
 
 
 
