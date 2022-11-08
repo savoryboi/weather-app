@@ -139,16 +139,23 @@ $(document).ready(function () {
         searchHistEl[0].innerHTML = '';
         console.log(searchHistEl)
 
-        for (var i = 0; i < 5; i++) {
+        historyArray.map(item => {
+            if(historyArray > 5){
+                historyArray.pop()
+            }
+
             var button = document.createElement('button');
-
+    
             button.setAttribute('class', 'historyBtn')
-
-            button.textContent = historyArray[i];
+    
+            button.textContent = item;
             button.addEventListener('click', function(event) {
                 getForecast(event.target.textContent)
             })
             searchHistEl.append(button);
+        })
+
+        for (var i = 0; i < 5; i++) {
         }
 
     }
