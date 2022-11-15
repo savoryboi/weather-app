@@ -17,13 +17,20 @@ $(document).ready(function () {
     $('#day4-date').text(day4);
     $('#day5-date').text(day5);
 
+    const input = document.getElementById('searchTxt')
+
+    input.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            submitBtn.click()
+        }
+    })
 
     submitBtn.onclick = function () {
-        // event.preventDefault();
-
+        
         // get value from input box 
         citySearch = searchTxt.value;
         storeData(citySearch);
+        searchTxt.value = '';
         getForecast(citySearch)
         // input value in api links to get correct info from openweather
     }
@@ -140,7 +147,7 @@ $(document).ready(function () {
         console.log(searchHistEl)
 
         historyArray.map(item => {
-            if(historyArray > 5){
+            if(historyArray.length > 5){
                 historyArray.pop()
             }
 
