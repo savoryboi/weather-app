@@ -46,22 +46,32 @@ body {
     padding: 2% 0px 5% 0px; 
 }
 
+#city-name {
+    font-size: 28px;
+}
+
 input {
     color: black;
     padding: 1% 2%;
     border-radius: 25px 0px 0px 25px;
     min-width: 25%;
+    border: none;
 }
 
 #searchBtn {
     background-color: rgb(255, 0, 119);
-    padding: 1% 2%;
+    padding: 1% 1%;
     border-radius: 0px 25px 25px 0px;
+    border: none;
 }
 
 .place-wrapper {
     padding: 10px;
-    font-size: large;
+    font-size: larger;
+    border: 2px hotpink solid;
+    border-radius: 10px;
+    width: 300px;
+    margin-top: 15px;
 }
 
 .forecast-wrapper div {
@@ -85,4 +95,8 @@ input {
 .historyBtn:hover {
     background-color: yellowgreen;
     padding: 4px 2.5%;
+}
+
+.historyBtn:active {
+    background-color: yellowgreen;
 }

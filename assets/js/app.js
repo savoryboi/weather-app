@@ -17,8 +17,10 @@ $(document).ready(function () {
     $('#day4-date').text(day4);
     $('#day5-date').text(day5);
 
-    const input = document.getElementById('searchTxt')
-
+    const input = document.getElementById('searchTxt');
+    const currentCity = document.getElementById('city-name');
+  
+    
     input.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
             submitBtn.click()
@@ -30,11 +32,14 @@ $(document).ready(function () {
         // get value from input box 
         citySearch = searchTxt.value;
         storeData(citySearch);
+        //clear input
         searchTxt.value = '';
         getForecast(citySearch)
         // input value in api links to get correct info from openweather
     }
+
     function getForecast(citySearch) {
+
         fetch('https://api.openweathermap.org/geo/1.0/direct?q=' + citySearch + '&limit=5&appid=ce8c11c996c61edc1c5e6e600162d8a9')
             .then(function (res) {
                 return res.json();
@@ -130,7 +135,6 @@ $(document).ready(function () {
         historyArray.push(searchHistory);
 
         localStorage.setItem('history', JSON.stringify(historyArray));
-        // $('#search-history').innerHTML = '';
         displayHist();
     }
 
@@ -150,26 +154,19 @@ $(document).ready(function () {
             if(historyArray.length > 5){
                 historyArray.pop()
             }
-
             var button = document.createElement('button');
     
-            button.setAttribute('class', 'historyBtn')
+            button.setAttribute('class', 'historyBtn');
     
             button.textContent = item;
             button.addEventListener('click', function(event) {
-                getForecast(event.target.textContent)
+                event.preventDefault();
+                getForecast(event.target.textContent);
             })
             searchHistEl.append(button);
         })
-
-        for (var i = 0; i < 5; i++) {
-        }
-
     }
 
     displayHist();
 
-})
-
-// look into new Set to remove dupes from array
-//.reverse()
+});
